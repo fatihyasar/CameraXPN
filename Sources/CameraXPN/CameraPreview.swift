@@ -17,6 +17,8 @@ public struct CameraPreview: UIViewRepresentable {
         
         camera.preview = AVCaptureVideoPreviewLayer(session: camera.session)
         camera.preview.frame = view.frame
+        camera.preview.connection?.videoOrientation = .landscapeLeft
+        camera.preview.connection?.videoOrientation = .portrait
         
         camera.preview.videoGravity = .resizeAspectFill
         view.layer.addSublayer(camera.preview)
